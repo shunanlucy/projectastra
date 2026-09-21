@@ -95,6 +95,15 @@
         <canvas id="hero-scroll-canvas" class="hero-scroll-canvas"></canvas>
         <div class="canvas-ambient-scrim"></div>
 
+        <!-- Floating Intuitive Swipe Up / Scroll Prompt -->
+        <div class="hero-swipe-pill" id="hero-swipe-indicator" onclick="triggerHeroScroll()" role="button" tabindex="0" aria-label="Scroll to explore Kundli">
+          <div class="swipe-chevrons">
+            <span class="chevron chevron-1"></span>
+            <span class="chevron chevron-2"></span>
+          </div>
+          <span class="swipe-label" data-i18n="heroSwipePrompt">SWIPE UP TO REVEAL</span>
+        </div>
+
         <!-- Prominent 'Check Your Kundli' Action Dock -->
         <div class="hero-cta-dock" id="hero-cta-dock">
           <button type="button" class="btn-heaven btn-large hero-kundli-trigger-btn" onclick="openKundliFormModal()" id="btn-open-kundli-form">

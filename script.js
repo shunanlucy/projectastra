@@ -706,6 +706,16 @@ function closeKundliFormModal() {
   }
 }
 
+function triggerHeroScroll() {
+  const heroSection = document.getElementById('hero');
+  if (!heroSection) return;
+  const targetY = heroSection.offsetTop + (heroSection.offsetHeight - window.innerHeight) * 0.75;
+  window.scrollTo({
+    top: targetY,
+    behavior: 'smooth'
+  });
+}
+
 function initCanvasScrollSequence() {
   const canvas = document.getElementById('hero-scroll-canvas');
   const heroSection = document.getElementById('hero');
@@ -802,6 +812,16 @@ function initCanvasScrollSequence() {
         ctaDock.classList.add('visible');
       } else {
         ctaDock.classList.remove('visible');
+      }
+    }
+
+    // Fade out swipe prompt indicator as soon as user begins scrolling
+    const swipeIndicator = document.getElementById('hero-swipe-indicator');
+    if (swipeIndicator) {
+      if (p > 0.04) {
+        swipeIndicator.classList.add('hidden');
+      } else {
+        swipeIndicator.classList.remove('hidden');
       }
     }
 

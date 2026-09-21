@@ -965,6 +965,98 @@ button {
   text-shadow: 0 1px 14px rgba(255, 255, 255, 0.85);
 }
 
+/* Floating Bottom Swipe / Scroll Prompt */
+.hero-swipe-pill {
+  position: absolute;
+  bottom: clamp(24px, 4.5vh, 42px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px 10px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 0 !important;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  animation: swipePillFloat 2.2s ease-in-out infinite;
+}
+
+.hero-swipe-pill.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(18px);
+}
+
+.hero-swipe-pill:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #94A3B8;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.18);
+}
+
+.swipe-chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 14px;
+  position: relative;
+}
+
+.swipe-chevrons .chevron {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #0F172A;
+  border-left: 2px solid #0F172A;
+  transform: rotate(45deg);
+  animation: swipeChevronMove 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.swipe-chevrons .chevron-2 {
+  margin-top: -3px;
+  animation-delay: 0.2s;
+  opacity: 0.55;
+}
+
+@keyframes swipeChevronMove {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(3px, 3px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-3px, -3px);
+  }
+}
+
+@keyframes swipePillFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.swipe-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0F172A;
+  white-space: nowrap;
+}
+
 /* Bottom Floating Action CTA Dock - Pops up at the very end of the scroll sequence */
 .hero-cta-dock {
   position: relative;

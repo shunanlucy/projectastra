@@ -16,6 +16,7 @@ const translations = {
     heroBadge: "HONEST KUNDLI GUIDANCE • PRACTICAL CLARITY",
     heroTitle: "Your Kundli, <br><span class=\"title-heaven-glow\">Direct Answers.</span>",
     heroSubtitle: "Clear, actionable guidance for Career, Marriage & Money in simple language with practical daily steps.",
+    heroSwipePrompt: "SWIPE UP TO REVEAL",
     portalTag: "✦ Direct, Honest Astrology for Modern Life ✦",
 
     tabCareer: "Career & Job Switch",
@@ -215,6 +216,7 @@ const translations = {
     heroBadge: "सटीक कुंडली मार्गदर्शन • व्यावहारिक स्पष्टता",
     heroTitle: "आपकी कुंडली, <br><span class=\"title-heaven-glow\">सीधे उत्तर।</span>",
     heroSubtitle: "करियर, विवाह और धन के मामलों में स्पष्ट, व्यावहारिक और सटीक मार्गदर्शन — सरल भाषा और वास्तविक समाधानों के साथ।",
+    heroSwipePrompt: "ऊपर स्वाइप करें",
     portalTag: "✦ आधुनिक जीवन के लिए ईमानदार व व्यावहारिक ज्योतिष ✦",
 
     tabCareer: "करियर व नौकरी",
