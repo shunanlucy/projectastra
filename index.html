@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>ASTRA — Swarg Jaisi Shanti & 3-Point Clarity Roadmap</title>
+  <meta name="description" content="Na koi darr, na koi uljhan. Bas ek shant, sundar margdarshan. Zero Rahu-Ketu confusion. Just 3 direct, peaceful answers in plain language.">
+  
+  <!-- Google Fonts: Syne, Inter, Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="heavenly-theme">
+  <!-- Heavenly Ambient Floating Background with Clouds & Floating Planets -->
+  <div class="heaven-background" aria-hidden="true">
+    <div class="heaven-clouds-layer" style="background-image: url('assets/heavenly-clouds.jpg');"></div>
+    <div class="divine-light-beam"></div>
+    <div class="heavenly-orb orb-gold"></div>
+    <div class="heavenly-orb orb-celestial"></div>
+    <div class="heavenly-orb orb-rose"></div>
+
+    <!-- Canvas for subtle background starry atmosphere -->
+    <canvas id="heavenly-particles"></canvas>
+  </div>
+
+  <!-- STREAMLINED MODERN FIXED HEADER -->
+  <header class="site-header" id="site-header">
+    <nav class="main-nav" aria-label="Main Navigation">
+      <div class="nav-container">
+        <!-- Clean Brand Logo -->
+        <a href="#" class="brand-logo" id="logo-link">
+          <span class="divine-star">✦</span>
+          <span class="logo-text">ASTRA</span>
+        </a>
+
+        <!-- Center Links -->
+        <ul class="nav-links">
+          <li><a href="#life-pillars" class="nav-link" data-i18n="navGuidance">Guidance</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="navPricing">Pricing</a></li>
+          <li><a href="#contrast" class="nav-link" data-i18n="navPrinciples">Principles</a></li>
+        </ul>
+
+        <!-- Right Actions: Language & CTA -->
+        <div class="nav-actions">
+          <!-- Language Switcher -->
+          <button id="lang-toggle" class="lang-pill" aria-label="Toggle English and Hindi" title="Switch English / हिन्दी">
+            <span class="lang-opt" id="lang-en">EN</span>
+            <span class="lang-divider">/</span>
+            <span class="lang-opt" id="lang-hi">हिन्दी</span>
+          </button>
+
+          <!-- CTA Button -->
+          <a href="#hero-console" class="btn-heaven btn-nav" id="nav-cta" data-i18n="navGetAnswers">
+            <span>Check Free Kundli</span>
+          </a>
+
+          <!-- Mobile Menu Trigger -->
+          <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Open mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-content">
+      <a href="#life-pillars" class="drawer-link" data-i18n="navGuidance">Guidance</a>
+      <a href="#pricing" class="drawer-link" data-i18n="navPricing">Pricing</a>
+      <a href="#contrast" class="drawer-link" data-i18n="navPrinciples">Principles</a>
+      <a href="#hero-console" class="btn-heaven drawer-cta" data-i18n="navGetAnswers">Check Free Kundli</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION: 3D SCROLL CANVAS STORYTELLING (Hand ➔ Rising Kundli ➔ Check Kundli CTA) -->
+    <section class="hero-3d-journey" id="hero">
+      <div class="stage-sticky-viewport" id="stage-viewport">
+        
+        <!-- Top Lead Banner & Header -->
+        <div class="stage-header-block text-center" id="stage-header">
+          <h1 class="hero-title fade-in" id="hero-heading" data-i18n="heroTitle">
+            Your Kundli, <span class="title-heaven-glow">Direct Answers.</span>
+          </h1>
+        </div>
+
+        <!-- Full-Screen Video Frame Canvas (Frames 1-60 Scrubbed via Scroll) -->
+        <canvas id="hero-scroll-canvas" class="hero-scroll-canvas"></canvas>
+        <div class="canvas-ambient-scrim"></div>
+
+        <!-- Prominent 'Check Your Kundli' Action Dock -->
+        <div class="hero-cta-dock" id="hero-cta-dock">
+          <button type="button" class="btn-heaven btn-large hero-kundli-trigger-btn" onclick="openKundliFormModal()" id="btn-open-kundli-form">
+            <span class="shimmer-effect"></span>
+            <span class="silver-sparkle">✦</span>
+            <span class="btn-text" data-i18n="navGetAnswers">Check Free Kundli</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEDICATED TRUST & VERIFIED CREDIBILITY STRIP (SEPARATE INDEPENDENT SECTION) -->
+    <section class="trust-metrics-section" id="trust-metrics">
+      <div class="container">
+        <div class="glass-card trust-banner-card">
+          <div class="trust-stat-box">
+            <span class="trust-stat-val">38,400+</span>
+            <span class="trust-stat-lbl" data-i18n="stat1">Happy Indians Guided</span>
+          </div>
+          <div class="trust-stat-divider"></div>
+          <div class="trust-stat-box">
+            <span class="trust-stat-val">4.9 / 5</span>
+            <span class="trust-stat-lbl" data-i18n="stat2">User Rating</span>
+          </div>
+          <div class="trust-stat-divider"></div>
+          <div class="trust-stat-box">
+            <span class="trust-stat-val">100% Honest</span>
+            <span class="trust-stat-lbl" data-i18n="stat3">Practical Clarity & Actionable Steps</span>
+          </div>
+          <div class="trust-stat-divider"></div>
+          <div class="trust-stat-box">
+            <span class="trust-stat-val">100%</span>
+            <span class="trust-stat-lbl">Confidential & Private</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 3 CORE LIFE PILLARS SHOWCASE (Career, Marriage, Wealth) -->
+    <section class="section life-pillars-section" id="life-pillars">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="silver-tag-badge" data-i18n="focusBadge">✦ 3 CORE FOCUS AREAS</div>
+          <h2 class="section-title" data-i18n="focusSectionTitle">Direct Guidance for What Matters Most</h2>
+          <p class="section-subtitle" data-i18n="focusSectionSubtitle">
+            Clear, practical direction for the three biggest areas of your life — with zero fear traps.
+          </p>
+        </div>
+
+        <div class="pillars-showcase-grid">
+          <!-- Card 1: Career & Job -->
+          <div class="glass-card pillar-showcase-card">
+            <div class="pillar-image-wrap">
+              <img src="assets/career-clarity.jpg" alt="Career & Leadership Clarity" class="pillar-card-img" loading="lazy">
+              <div class="pillar-img-overlay"></div>
+              <span class="pillar-badge-tag" data-i18n="tabCareer">Career & Job Switch</span>
+            </div>
+            <div class="pillar-card-body">
+              <h3 class="pillar-card-title" data-i18n="slide1Title">Timing for job switch, promotion, salary hike & exams.</h3>
+              <p class="pillar-card-desc" data-i18n="pillarCareerDesc">Know your favorable transit windows for role change, corporate appraisals, and competitive exam timing.</p>
+              <button type="button" class="pillar-card-btn" onclick="selectHeroFocus('career')">
+                <span data-i18n="btnCheckCareer">Check Career Timing</span> →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Love & Marriage -->
+          <div class="glass-card pillar-showcase-card">
+            <div class="pillar-image-wrap">
+              <img src="assets/love-harmony.jpg" alt="Love & Relationship Harmony" class="pillar-card-img" loading="lazy">
+              <div class="pillar-img-overlay"></div>
+              <span class="pillar-badge-tag" data-i18n="tabLove">Love & Marriage</span>
+            </div>
+            <div class="pillar-card-body">
+              <h3 class="pillar-card-title" data-i18n="slide2Title">Clear advice on marriage timing, partner compatibility & family peace.</h3>
+              <p class="pillar-card-desc" data-i18n="pillarLoveDesc">Honest perspective on marriage delay, partner compatibility, and family harmony without Manglik scare tactics.</p>
+              <button type="button" class="pillar-card-btn" onclick="selectHeroFocus('relationship')">
+                <span data-i18n="btnCheckLove">Check Marriage Timing</span> →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Money & Business -->
+          <div class="glass-card pillar-showcase-card">
+            <div class="pillar-image-wrap">
+              <img src="assets/wealth-prosperity.jpg" alt="Wealth & Financial Stability" class="pillar-card-img" loading="lazy">
+              <div class="pillar-img-overlay"></div>
+              <span class="pillar-badge-tag" data-i18n="tabWealth">Money & Business</span>
+            </div>
+            <div class="pillar-card-body">
+              <h3 class="pillar-card-title" data-i18n="slide3Title">Practical guidance for business decisions, investments & financial growth.</h3>
+              <p class="pillar-card-desc" data-i18n="pillarWealthDesc">Practical cycles for capital investment, partnership safety, and disciplined financial stability.</p>
+              <button type="button" class="pillar-card-btn" onclick="selectHeroFocus('wealth')">
+                <span data-i18n="btnCheckWealth">Check Wealth Timing</span> →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE COSMIC ENERGY & SATVIK REMEDY EXPLORER -->
+    <section class="cosmic-energy-section" id="cosmic-explorer">
+      <div class="container">
+        <div class="glass-card cosmic-widget-card">
+          <div class="cosmic-widget-header text-center">
+            <div class="heaven-badge-sm" data-i18n="cosmicBadge">Daily Horoscope Guide</div>
+            <h2 class="section-title" data-i18n="cosmicTitle">Today's Planetary Impact on Your Rashi</h2>
+            <p class="section-subtitle" data-i18n="cosmicSubtitle">Select your Rashi to see today's focus, best decision timing, and a simple daily tip.</p>
+          </div>
+
+          <!-- 12 Rashi Selection Grid (Symmetrical 6x2 layout) -->
+          <div class="rashi-selector-wrap">
+            <div class="rashi-grid" id="rashi-grid">
+              <!-- Will be populated dynamically by script.js with text-style glyphs -->
+            </div>
+          </div>
+
+          <!-- Dynamic Energy Display Grid -->
+          <div class="cosmic-display-grid" id="cosmic-display">
+            <!-- Vitals Column -->
+            <div class="energy-meters">
+              <div class="vital-card">
+                <div class="vital-header">
+                  <div class="vital-icon-title">
+                    <span class="vital-glyph">🧠</span>
+                    <span class="vital-name" data-i18n="meter1Label">Mind & Focus</span>
+                  </div>
+                  <span class="vital-badge badge-peace" id="meter-peace-val">High Focus (88%)</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-peace" id="meter-peace-fill" style="width: 88%;"></div>
+                </div>
+                <p class="vital-note" id="meter-peace-note">Ideal for strategic planning, deep study, and important talks.</p>
+              </div>
+
+              <div class="vital-card">
+                <div class="vital-header">
+                  <div class="vital-icon-title">
+                    <span class="vital-glyph">☀️</span>
+                    <span class="vital-name" data-i18n="meter2Label">Best Timing for Big Work</span>
+                  </div>
+                  <span class="vital-badge badge-karma" id="meter-karma-val">High Window (93%)</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-karma" id="meter-karma-fill" style="width: 93%;"></div>
+                </div>
+                <p class="vital-note" id="meter-karma-note">Favorable window between 11:00 AM – 3:30 PM for important initiatives.</p>
+              </div>
+
+              <div class="vital-card">
+                <div class="vital-header">
+                  <div class="vital-icon-title">
+                    <span class="vital-glyph">🌿</span>
+                    <span class="vital-name" data-i18n="meter3Label">Stress Level</span>
+                  </div>
+                  <span class="vital-badge badge-caution" id="meter-caution-val">Low & Steady</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-caution" id="meter-caution-fill" style="width: 28%;"></div>
+                </div>
+                <p class="vital-note" id="meter-caution-note">Low emotional stress. Stay focused on your primary task.</p>
+              </div>
+            </div>
+
+            <!-- Mindful Practice Showcase Card -->
+            <div class="remedy-preview-box">
+              <div class="remedy-header-row">
+                <span class="remedy-tag" data-i18n="remedyTag">✦ Simple Daily Habit</span>
+                <span class="remedy-time-pill" id="remedy-time">Morning Routine</span>
+              </div>
+              <h4 class="remedy-title" id="remedy-title">Morning Sunlight & Warm Water Routine</h4>
+              <p class="remedy-desc" id="remedy-desc">Spend 10 minutes facing the early morning sun, followed by warm water. Keeps your head calm and clears fatigue.</p>
+              
+              <div class="remedy-meta-row">
+                <div class="remedy-bullet">
+                  <span class="bullet-dot"></span>
+                  <span id="remedy-bullet-1">Resets natural body clock</span>
+                </div>
+                <div class="remedy-bullet">
+                  <span class="bullet-dot"></span>
+                  <span id="remedy-bullet-2">Boosts energy & daily mental clarity</span>
+                </div>
+              </div>
+
+              <button type="button" class="btn-satvik-remedy" onclick="openSatvikModal()" data-i18n="btnExploreSatvik">
+                <span>Explore Simple Daily Habits</span> →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: THE ASTRA PHILOSOPHY & PRINCIPLES -->
+    <section class="section contrast-section" id="contrast">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="silver-tag-badge" data-i18n="pillarsBadge">✦ THE ASTRA PHILOSOPHY</div>
+          <h2 class="section-title" data-i18n="pillarsTitle">Built on Clarity, Logic & Respect</h2>
+          <p class="section-subtitle" data-i18n="pillarsSubtitle">
+            Astrology designed to bring peace of mind, clear perspective, and practical direction to your life.
+          </p>
+        </div>
+
+        <div class="standards-grid">
+          <!-- Principle 1 -->
+          <div class="glass-card standard-card">
+            <div class="standard-header">
+              <span class="standard-num">01</span>
+              <span class="standard-icon">📋</span>
+            </div>
+            <h3 class="standard-title" data-i18n="pillarItem1Title">1-Screen Concrete Answers</h3>
+            <p class="standard-desc" data-i18n="pillarItem1Desc">
+              Focused, practical guidance answering what is happening, when timings favor you, and what steps to take.
+            </p>
+            <div class="standard-tag" data-i18n="pillarTag1">Direct & Actionable</div>
+          </div>
+
+          <!-- Principle 2 -->
+          <div class="glass-card standard-card">
+            <div class="standard-header">
+              <span class="standard-num">02</span>
+              <span class="standard-icon">💬</span>
+            </div>
+            <h3 class="standard-title" data-i18n="pillarItem2Title">Simple, Grounded Language</h3>
+            <p class="standard-desc" data-i18n="pillarItem2Desc">
+              Everyday English and natural Hindi conversations explained with empathy, making planetary cycles easy to navigate.
+            </p>
+            <div class="standard-tag" data-i18n="pillarTag2">Easy to Understand</div>
+          </div>
+
+          <!-- Principle 3 -->
+          <div class="glass-card standard-card">
+            <div class="standard-header">
+              <span class="standard-num">03</span>
+              <span class="standard-icon">🎓</span>
+            </div>
+            <h3 class="standard-title" data-i18n="pillarItem3Title">Educated & Sensible Advisors</h3>
+            <p class="standard-desc" data-i18n="pillarItem3Desc">
+              Vetted mentors who understand modern career, relationship, and financial realities, guiding you with maturity.
+            </p>
+            <div class="standard-tag" data-i18n="pillarTag3">Thoughtful Mentorship</div>
+          </div>
+
+          <!-- Principle 4 -->
+          <div class="glass-card standard-card">
+            <div class="standard-header">
+              <span class="standard-num">04</span>
+              <span class="standard-icon">⚖️</span>
+            </div>
+            <h3 class="standard-title" data-i18n="pillarItem4Title">Upfront & Transparent Rates</h3>
+            <p class="standard-desc" data-i18n="pillarItem4Desc">
+              Completely transparent consultations with flat pricing, dedicated time slots, and respect for your schedule.
+            </p>
+            <div class="standard-tag" data-i18n="pillarTag4">Honest Flat Pricing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: VISUAL EMBODIMENT OF INNER PEACE -->
+    <section class="section tranquility-section" id="tranquility">
+      <div class="container">
+        <div class="glass-card tranquility-banner">
+          <div class="tranquility-media">
+            <img src="assets/inner-peace.jpg" alt="Tranquil seeker in peace" class="tranquility-img">
+            <div class="tranquility-glow-ring"></div>
+          </div>
+          <div class="tranquility-content">
+            <div class="heaven-badge-sm" data-i18n="peaceBadge">Thoughtful Guidance</div>
+            <h2 class="section-title" data-i18n="peaceTitle">Astrology designed to bring clarity and peace of mind.</h2>
+            <p class="section-subtitle-left" data-i18n="peaceDesc">
+              Whether making a career decision or navigating personal relationships, you deserve thoughtful, honest perspective. We break down your planetary cycles into practical, realistic steps.
+            </p>
+            <div class="peace-points">
+              <div class="peace-point-item">
+                <span class="peace-icon">☀️</span>
+                <span data-i18n="peacePoint1">Simple daily routines like morning sunlight, mindful breathwork, and practical planning.</span>
+              </div>
+              <div class="peace-point-item">
+                <span class="peace-icon">🕊️</span>
+                <span data-i18n="peacePoint2">Respectful, supportive conversations focused purely on your growth and peace.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION: MEET PEACEFUL GUIDES -->
+    <section class="section guides-section" id="guides">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="heaven-badge-sm" data-i18n="guidesBadge">Verified Astrologers</div>
+          <h2 class="section-title" data-i18n="guidesTitle">Talk to Genuine Astrologers</h2>
+          <p class="section-subtitle" data-i18n="guidesSubtitle">
+            Educated astrologers and mentors who listen patiently and talk like a family elder.
+          </p>
+        </div>
+
+        <div class="guides-grid">
+          <!-- Guide 1 -->
+          <div class="glass-card guide-card">
+            <div class="guide-avatar-wrap">
+              <div class="guide-avatar avatar-1">
+                <span>SK</span>
+              </div>
+              <span class="guide-online-badge">Active</span>
+            </div>
+            <h4 class="guide-name">Dr. Saurabh Kulkarni</h4>
+            <span class="guide-spec" data-i18n="guide1Spec">IIT Bombay Alum • Career & Tech Transitions</span>
+            <p class="guide-bio" data-i18n="guide1Bio">
+              Specializes in IT careers, job switch timing, startup founder guidance, and executive moves. Fluent in English, Hindi & Marathi.
+            </p>
+            <div class="guide-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.98 (2,400+ calls)</span>
+            </div>
+            <div class="guide-actions">
+              <button type="button" class="btn-guide-voice" onclick="playGuideVoice(1, this)">
+                <span class="voice-icon">▶</span>
+                <span class="voice-label" data-i18n="btnVoiceNote">15s Voice Intro</span>
+                <div class="voice-wave" style="display: none;"><span></span><span></span><span></span></div>
+              </button>
+              <div class="guide-voice-bubble" id="voice-bubble-1" style="display: none;"></div>
+              <button type="button" class="btn-guide-slot" onclick="selectPricing(2)" data-i18n="btnBookSlot">Book 15-Min Slot</button>
+            </div>
+          </div>
+
+          <!-- Guide 2 -->
+          <div class="glass-card guide-card">
+            <div class="guide-avatar-wrap">
+              <div class="guide-avatar avatar-2">
+                <span>AV</span>
+              </div>
+              <span class="guide-online-badge">Active</span>
+            </div>
+            <h4 class="guide-name">Ananya Vashistha</h4>
+            <span class="guide-spec" data-i18n="guide2Spec">Relationship & Marriage Counselor</span>
+            <p class="guide-bio" data-i18n="guide2Bio">
+              Decodes relationship compatibility, marriage timing, and family dynamics with profound empathy and zero shaming.
+            </p>
+            <div class="guide-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.95 (1,890+ calls)</span>
+            </div>
+            <div class="guide-actions">
+              <button type="button" class="btn-guide-voice" onclick="playGuideVoice(2, this)">
+                <span class="voice-icon">▶</span>
+                <span class="voice-label" data-i18n="btnVoiceNote">15s Voice Intro</span>
+                <div class="voice-wave" style="display: none;"><span></span><span></span><span></span></div>
+              </button>
+              <div class="guide-voice-bubble" id="voice-bubble-2" style="display: none;"></div>
+              <button type="button" class="btn-guide-slot" onclick="selectPricing(2)" data-i18n="btnBookSlot">Book 15-Min Slot</button>
+            </div>
+          </div>
+
+          <!-- Guide 3 -->
+          <div class="glass-card guide-card">
+            <div class="guide-avatar-wrap">
+              <div class="guide-avatar avatar-3">
+                <span>RM</span>
+              </div>
+              <span class="guide-online-badge">Active</span>
+            </div>
+            <h4 class="guide-name">Raghavendra Mishra</h4>
+            <span class="guide-spec" data-i18n="guide3Spec">Finance & Business Astrologer</span>
+            <p class="guide-bio" data-i18n="guide3Bio">
+              Maps planetary cycles to capital investments, real estate, and business decisions. Simple Hindi & English.
+            </p>
+            <div class="guide-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.96 (3,100+ calls)</span>
+            </div>
+            <div class="guide-actions">
+              <button type="button" class="btn-guide-voice" onclick="playGuideVoice(3, this)">
+                <span class="voice-icon">▶</span>
+                <span class="voice-label" data-i18n="btnVoiceNote">15s Voice Intro</span>
+                <div class="voice-wave" style="display: none;"><span></span><span></span><span></span></div>
+              </button>
+              <div class="guide-voice-bubble" id="voice-bubble-3" style="display: none;"></div>
+              <button type="button" class="btn-guide-slot" onclick="selectPricing(2)" data-i18n="btnBookSlot">Book 15-Min Slot</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: "LIVE CLARITY SESSION" PRICING SLABS -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="heaven-badge-sm" data-i18n="pricingBadge">Simple & Transparent</div>
+          <h2 class="section-title" data-i18n="pricingTitle">Flat Consultation Rates</h2>
+          <p class="section-subtitle" data-i18n="pricingSubtitle">
+            No ticking per-minute meters. No unexpected ₹2,000 surprises. Pick what you need.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Tile 1 (Basic Snapshot - Free) -->
+          <div class="glass-card pricing-tile tile-free">
+            <div class="pricing-tier-header">
+              <span class="tier-name" data-i18n="tier1Name">Free Kundli Overview</span>
+              <div class="tier-price">
+                <span class="currency">₹</span><span class="amount">0</span>
+                <span class="duration" data-i18n="tier1Duration">/ Free Forever</span>
+              </div>
+              <p class="tier-desc" data-i18n="tier1Desc">Instant automated summary to understand your core Kundli positions.</p>
+            </div>
+
+            <div class="pricing-divider"></div>
+
+            <ul class="tier-features">
+              <li>
+                <span class="feature-check">✓</span>
+                <strong data-i18n="tier1F1">Instant 3-Point Overview (Free AI Snapshot)</strong>
+              </li>
+              <li>
+                <span class="feature-check">✓</span>
+                <span data-i18n="tier1F2">Lagna & Moon Sign Decoded</span>
+              </li>
+              <li>
+                <span class="feature-check">✓</span>
+                <span data-i18n="tier1F3">Immediate Web Access</span>
+              </li>
+              <li class="disabled-feature">
+                <span class="feature-cross">✕</span>
+                <span data-i18n="tier1F4">No 1-on-1 Astrologer Call</span>
+              </li>
+            </ul>
+
+            <button class="btn-heaven btn-tile" onclick="openKundliFormModal()" data-i18n="btnTier1">
+              <span>Check Free Kundli</span>
+            </button>
+          </div>
+
+          <!-- Tile 2 (Single Issue Fix - ₹99) -->
+          <div class="glass-card pricing-tile tile-single">
+            <div class="pricing-tier-header">
+              <span class="tier-name" data-i18n="tier2Name">Single Question Fix</span>
+              <div class="tier-price">
+                <span class="currency">₹</span><span class="amount">99</span>
+                <span class="duration" data-i18n="tier2Duration">/ One-time Flat</span>
+              </div>
+              <p class="tier-desc" data-i18n="tier2Desc">Targeted resolution for one pressing life question keeping you awake.</p>
+            </div>
+
+            <div class="pricing-divider"></div>
+
+            <ul class="tier-features">
+              <li>
+                <span class="feature-check">✓</span>
+                <strong data-i18n="tier2F1">1 Direct Question Addressed</strong>
+              </li>
+              <li>
+                <span class="feature-check">✓</span>
+                <strong data-i18n="tier2F2">Timing & Practical Remedy PDF</strong>
+              </li>
+              <li>
+                <span class="feature-check">✓</span>
+                <span data-i18n="tier2F3">Turnaround within 3 hours</span>
+              </li>
+              <li>
+                <span class="feature-check">✓</span>
+                <span data-i18n="tier2F4">Conversational Hindi or English</span>
+              </li>
+            </ul>
+
+            <button class="btn-heaven btn-tile" onclick="openCheckoutModal('Single Question Fix', 99)" data-i18n="btnTier2">
+              <span>Get ₹99 Solution</span>
+            </button>
+          </div>
+
+          <!-- Tile 3 (Full Clarity - ₹249 Recommended - Silver Chrome Accent Glow) -->
+          <div class="glass-card pricing-tile tile-recommended">
+            <div class="recommended-pill" data-i18n="tier3Badge">RECOMMENDED</div>
+            <div class="pricing-tier-header">
+              <span class="tier-name" data-i18n="tier3Name">Full 15-Min Live Call</span>
+              <div class="tier-price">
+                <span class="currency">₹</span><span class="amount">249</span>
+                <span class="duration" data-i18n="tier3Duration">/ Full 15-Min Session</span>
+              </div>
+              <p class="tier-desc" data-i18n="tier3Desc">Private 1-on-1 audio consultation with our top verified astrologer.</p>
+            </div>
+
+            <div class="pricing-divider"></div>
+
+            <ul class="tier-features">
+              <li>
+                <span class="feature-check check-glow">✓</span>
+                <strong data-i18n="tier3F1">15-Minute Dedicated Call</strong>
+              </li>
+              <li>
+                <span class="feature-check check-glow">✓</span>
+                <strong data-i18n="tier3F2">Empathetic Astrologer</strong>
+              </li>
+              <li>
+                <span class="feature-check check-glow">✓</span>
+                <strong data-i18n="tier3F3">No Time-Dragging (Direct Answers)</strong>
+              </li>
+              <li>
+                <span class="feature-check check-glow">✓</span>
+                <span data-i18n="tier3F4">Post-call Actionable Checklist</span>
+              </li>
+              <li>
+                <span class="feature-check check-glow">✓</span>
+                <span data-i18n="tier3F5">Zero upsell of gemstone or expensive poojas</span>
+              </li>
+            </ul>
+
+            <button class="btn-heaven btn-tile btn-primary-glow btn-shimmer" onclick="openCheckoutModal('Full 15-Min Live Call', 249)" data-i18n="btnTier3">
+              <span class="shimmer-effect"></span>
+              <span class="btn-text">Book 15-Min Call (₹249)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FREQUENTLY ASKED QUESTIONS -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="heaven-badge-sm" data-i18n="faqBadge">Honest FAQs</div>
+          <h2 class="section-title" data-i18n="faqTitle">Frequently Asked Questions</h2>
+          <p class="section-subtitle" data-i18n="faqSubtitle">
+            Everything you need to know about how ASTRA operates differently.
+          </p>
+        </div>
+
+        <div class="faq-accordion-wrap">
+          <!-- FAQ 1 -->
+          <div class="glass-card faq-item">
+            <button class="faq-question">
+              <span data-i18n="faq1Q">Why do you strictly limit answers to 3 direct points?</span>
+              <span class="faq-arrow">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq1A">
+                Because 50-page reports only create more confusion. By focusing on the 3 things that actually matter—What is happening, What mistake to avoid, and What simple step to take—you get immediate, practical clarity.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="glass-card faq-item">
+            <button class="faq-question">
+              <span data-i18n="faq2Q">Will you tell me I have Kaal Sarp or Manglik Dosha?</span>
+              <span class="faq-arrow">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq2A">
+                No. In classical astrology, planetary positions show natural life cycles and personality traits, not demonic curses. We never use doshas to scare you into buying expensive gemstones or poojas.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="glass-card faq-item">
+            <button class="faq-question">
+              <span data-i18n="faq3Q">Can I speak in normal Hinglish or Hindi on call?</span>
+              <span class="faq-arrow">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq3A">
+                Bilkul! All our astrologers speak fluent everyday Hindi, Hinglish, and English. You talk comfortably just like discussing things with a trusted family mentor over chai.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="glass-card faq-item">
+            <button class="faq-question">
+              <span data-i18n="faq4Q">How does the flat pricing work? Will my call be cut off?</span>
+              <span class="faq-arrow">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq4A">
+                There are zero hidden charges. ₹249 is the complete prepaid fee for the full 15-minute slot. There is no per-minute meter running and our astrologers arrive prepared having checked your chart in advance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="divine-star">✦</span>
+            <span class="logo-text">ASTRA</span>
+          </div>
+          <p class="footer-tagline" data-i18n="footerTagline">
+            Honest, fear-free Vedic astrology for modern Indians. Simple language, direct answers, and zero drama.
+          </p>
+        </div>
+
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h5 data-i18n="footerCol1">Services</h5>
+            <a href="#hero-console" data-i18n="footerAI">Free Kundli Check</a>
+            <a href="#contrast" data-i18n="footerMethodology">Why ASTRA?</a>
+            <a href="#pricing" data-i18n="footerPricing">Pricing Slabs</a>
+          </div>
+          <div class="footer-col">
+            <h5 data-i18n="footerCol2">Astrologers</h5>
+            <a href="#tranquility" data-i18n="footerEthics">Zero Fear Policy</a>
+            <a href="#guides" data-i18n="footerJoinGuides">Our Astrologers</a>
+            <a href="#faq" data-i18n="footerFAQ">FAQs</a>
+          </div>
+          <div class="footer-col">
+            <h5 data-i18n="footerCol3">Privacy & Trust</h5>
+            <a href="#" onclick="alert('Your birth details are encrypted with 256-bit SSL protocol and never shared.'); return false;" data-i18n="footerEncrypted">256-bit Encryption</a>
+            <a href="#" onclick="alert('We never spam or sell your contact number.'); return false;" data-i18n="footerNoSpam">Zero Spam Guarantee</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 ASTRA Technologies Pvt. Ltd. All rights reserved.</p>
+        <p class="footer-disclaimer" data-i18n="footerDisclaimer">
+          Disclaimer: Astrological guidance is an advisory reflective tool and should not substitute professional medical, legal, or financial advice.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- KUNDLI DETAILS FORM MODAL (Reveals on 'Check Free Kundli' click) -->
+  <div class="modal-backdrop" id="kundli-form-modal" aria-hidden="true">
+    <div class="glass-card modal-container kundli-modal-container" id="hero-console">
+      <button class="modal-close-btn" id="kundli-modal-close-btn" onclick="closeKundliFormModal()" aria-label="Close modal">✕</button>
+      <div class="console-header">
+        <div class="console-tab-indicator">
+          <span class="peace-lotus">🪷</span>
+          <h3 class="console-title" data-i18n="consolePeaceText">Check Your Free Kundli</h3>
+        </div>
+        <span class="console-badge">100% Confidential</span>
+      </div>
+
+      <form id="astro-form" class="astro-form" autocomplete="off" onsubmit="return false;">
+        <div class="form-grid">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="userName" data-i18n="labelName">Full Name</label>
+            <input type="text" id="userName" name="name" class="clean-form-input" placeholder="e.g. Rahul Sharma" required>
+          </div>
+
+          <!-- Date of Birth -->
+          <div class="form-group">
+            <label for="userDob" data-i18n="labelDob">Date of Birth</label>
+            <input type="date" id="userDob" name="dob" class="clean-form-input" value="1998-07-15" required>
+          </div>
+
+          <!-- Time of Birth -->
+          <div class="form-group">
+            <label for="userTob" data-i18n="labelTob">Birth Time (approx)</label>
+            <input type="time" id="userTob" name="tob" class="clean-form-input" value="14:30">
+          </div>
+
+          <!-- Place of Birth -->
+          <div class="form-group">
+            <label for="userPob" data-i18n="labelPob">Birth City / Town</label>
+            <input type="text" id="userPob" name="pob" class="clean-form-input" placeholder="e.g. New Delhi, Mumbai, Bengaluru" required>
+          </div>
+        </div>
+
+        <!-- Primary Focus Selector -->
+        <div class="focus-selector">
+          <span class="focus-title" data-i18n="focusPrompt">What is your main concern right now?</span>
+          <div class="focus-pills">
+            <button type="button" class="focus-pill active" data-focus="career">
+              <span data-i18n="focusCareer">Career & Job Switch</span>
+            </button>
+            <button type="button" class="focus-pill" data-focus="relationship">
+              <span data-i18n="focusRelationship">Love & Marriage</span>
+            </button>
+            <button type="button" class="focus-pill" data-focus="wealth">
+              <span data-i18n="focusWealth">Money & Business</span>
+            </button>
+            <button type="button" class="focus-pill" data-focus="relocation">
+              <span data-i18n="focusRelocation">Moving Abroad</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main CTA Button -->
+        <div class="console-cta-wrap">
+          <button type="submit" id="reveal-btn" class="btn-heaven btn-large btn-shimmer">
+            <span class="shimmer-effect"></span>
+            <span class="btn-text" data-i18n="btnReveal">See My 3 Direct Answers</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <p class="console-guarantee">
+            <span data-i18n="privacyNotice">100% Private & Confidential • Complete Data Privacy</span>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ROADMAP RESULT MODAL -->
+  <div class="modal-backdrop" id="roadmap-modal" aria-hidden="true">
+    <div class="glass-card modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      
+      <!-- Generating / Loading State -->
+      <div class="modal-loading" id="modal-loading">
+        <div class="heavenly-lotus-spinner">
+          <span class="spinner-core">📋</span>
+          <div class="halo-ring"></div>
+        </div>
+        <h3 class="loading-title" data-i18n="loadingTitle">Reading Your Kundli Chart...</h3>
+        <p class="loading-desc" data-i18n="loadingDesc">Calculating your planetary positions and preparing your 3 direct answers.</p>
+        <div class="loading-progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Generated Results State -->
+      <div class="modal-results" id="modal-results" style="display: none;">
+        <div class="modal-header">
+          <div class="heaven-badge-sm" data-i18n="modalBadge">3-Point Kundli Answer</div>
+          <h2 class="modal-user-title" id="modal-user-title">Aryan Sharma's Kundli Summary</h2>
+          <p class="modal-user-sub" id="modal-user-sub">Scorpio Lagna • Career & Job Switch Focus</p>
+        </div>
+
+        <div class="results-grid" id="results-grid">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+        <div class="modal-action-bar">
+          <button class="btn-heaven btn-small" onclick="window.print()" data-i18n="btnSaveRoadmap">Save / Print Summary</button>
+          <button class="btn-heaven btn-small btn-primary-glow" onclick="openCheckoutModal('Full 15-Min Live Call', 249)" data-i18n="btnConsultGuide">Discuss on 15-Min Call (₹249)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SATVIK PRACTICAL REMEDIES MODAL (ZERO FEAR) -->
+  <div class="modal-backdrop" id="satvik-modal" aria-hidden="true">
+    <div class="glass-card modal-container">
+      <button class="modal-close-btn" onclick="closeSatvikModal()" aria-label="Close modal">✕</button>
+      <div class="modal-header text-center">
+        <div class="heaven-badge-sm" data-i18n="satvikModalBadge">Simple Daily Habits</div>
+        <h3 data-i18n="satvikModalTitle">4 Practical Vedic Habits for Daily Peace</h3>
+        <p class="modal-user-sub" data-i18n="satvikModalSub">Natural lifestyle routines that help you stay calm and focused without expensive rituals.</p>
+      </div>
+
+      <div class="satvik-pillars-grid">
+        <div class="satvik-pillar-card">
+          <span class="pillar-icon">🌅</span>
+          <h4 class="pillar-title" data-i18n="pillar1Title">Surya Arghya & Morning Sunlight</h4>
+          <p class="pillar-desc" data-i18n="pillar1Desc">10 minutes of direct morning sunlight resets your circadian rhythm, boosts natural energy, and clears brain fog.</p>
+        </div>
+
+        <div class="satvik-pillar-card">
+          <span class="pillar-icon">🧘</span>
+          <h4 class="pillar-title" data-i18n="pillar2Title">Left-Nostril Breathing (Pranayama)</h4>
+          <p class="pillar-desc" data-i18n="pillar2Desc">Gentle breathing for 5 minutes before bed calms the nervous system and stops nighttime overthinking.</p>
+        </div>
+
+        <div class="satvik-pillar-card">
+          <span class="pillar-icon">🕊️</span>
+          <h4 class="pillar-title" data-i18n="pillar3Title">Feeding Birds & Animals (Jiva Seva)</h4>
+          <p class="pillar-desc" data-i18n="pillar3Desc">Offering clean water and bird grains on your balcony or terrace every morning brings peace of mind and cultivates positive karma.</p>
+        </div>
+
+        <div class="satvik-pillar-card">
+          <span class="pillar-icon">🔔</span>
+          <h4 class="pillar-title" data-i18n="pillar4Title">Calm Workspace & Focus Sound</h4>
+          <p class="pillar-desc" data-i18n="pillar4Desc">Keeping your work desk clean and listening to soft morning sounds removes daily tension and improves productivity.</p>
+        </div>
+      </div>
+
+      <div class="modal-action-bar text-center">
+        <button class="btn-heaven btn-primary-glow" onclick="closeSatvikModal(); openKundliFormModal();" data-i18n="btnSatvikClose">
+          <span>Apply in My Kundli Plan</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT / BOOKING MODAL -->
+  <div class="modal-backdrop" id="checkout-modal" aria-hidden="true">
+    <div class="glass-card modal-container checkout-container">
+      <button class="modal-close-btn" id="checkout-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-header text-center">
+        <div class="heaven-badge-sm">Instant Reservation</div>
+        <h3 id="checkout-item-title">Full Clarity Call</h3>
+        <div class="checkout-price-tag" id="checkout-item-price">₹249 Flat</div>
+      </div>
+
+      <div class="checkout-form">
+        <div class="form-group">
+          <label>Preferred Language</label>
+          <select id="checkout-lang" class="checkout-select">
+            <option value="Hinglish">Conversational Hinglish / Hindi</option>
+            <option value="English">Fluent English</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Phone / WhatsApp for Call Link</label>
+          <input type="tel" id="checkout-phone" placeholder="+91 98765 43210" class="checkout-input">
+        </div>
+        <div class="form-group">
+          <label>Preferred Time Slot</label>
+          <select id="checkout-slot" class="checkout-select">
+            <option>Today, 4:00 PM - 4:15 PM</option>
+            <option>Today, 6:30 PM - 6:45 PM</option>
+            <option>Tomorrow, 11:00 AM - 11:15 AM</option>
+            <option>Tomorrow, 8:00 PM - 8:15 PM</option>
+          </select>
+        </div>
+
+        <button class="btn-heaven btn-large btn-shimmer w-100" id="btn-confirm-pay" onclick="simulatePayment()">
+          <span class="shimmer-effect"></span>
+          <span class="btn-text">Confirm & Proceed to Secure UPI / Card</span>
+        </button>
+        <p class="text-center text-muted text-xs mt-3">
+          🔒 Secured with 256-bit SSL. 100% Refund guarantee if guide is late.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT & MODULAR DATA (OPTIMIZED FOR TOKEN EFFICIENCY) -->
+  <script src="data/i18n.js"></script>
+  <script src="data/roadmaps.js"></script>
+  <script src="data/rashis.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
