@@ -976,13 +976,11 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  padding: 8px 20px 10px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.95);
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
   border-radius: 0 !important;
-  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: none;
   cursor: pointer;
   user-select: none;
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -996,9 +994,7 @@ button {
 }
 
 .hero-swipe-pill:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: #94A3B8;
-  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.18);
+  transform: translateX(-50%) translateY(-3px) scale(1.04);
 }
 
 .swipe-chevrons {
@@ -1007,12 +1003,13 @@ button {
   align-items: center;
   height: 14px;
   position: relative;
+  filter: drop-shadow(0 1px 4px rgba(255, 255, 255, 0.95));
 }
 
 .swipe-chevrons .chevron {
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-top: 2px solid #0F172A;
   border-left: 2px solid #0F172A;
   transform: rotate(45deg);
@@ -1020,9 +1017,9 @@ button {
 }
 
 .swipe-chevrons .chevron-2 {
-  margin-top: -3px;
+  margin-top: -4px;
   animation-delay: 0.2s;
-  opacity: 0.55;
+  opacity: 0.65;
 }
 
 @keyframes swipeChevronMove {
@@ -1049,12 +1046,13 @@ button {
 }
 
 .swipe-label {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #0F172A;
   white-space: nowrap;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(255, 255, 255, 0.9);
 }
 
 /* Bottom Floating Action CTA Dock - Pops up at the very end of the scroll sequence */
