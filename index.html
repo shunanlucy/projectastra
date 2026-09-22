@@ -106,11 +106,10 @@
 
         <!-- Prominent 'Check Your Kundli' Action Dock -->
         <div class="hero-cta-dock" id="hero-cta-dock">
-          <button type="button" class="btn-heaven btn-large hero-kundli-trigger-btn" onclick="openKundliFormModal()" id="btn-open-kundli-form">
+          <button type="button" class="hero-kundli-trigger-btn" onclick="openKundliFormModal()" id="btn-open-kundli-form">
             <span class="shimmer-effect"></span>
             <span class="silver-sparkle">✦</span>
             <span class="btn-text" data-i18n="navGetAnswers">Check Free Kundli</span>
-            <span class="btn-arrow">→</span>
           </button>
         </div>
       </div>
@@ -119,25 +118,22 @@
     <!-- DEDICATED TRUST & VERIFIED CREDIBILITY STRIP (SEPARATE INDEPENDENT SECTION) -->
     <section class="trust-metrics-section" id="trust-metrics">
       <div class="container">
-        <div class="glass-card trust-banner-card">
+        <div class="trust-banner-card">
           <div class="trust-stat-box">
-            <span class="trust-stat-val">38,400+</span>
-            <span class="trust-stat-lbl" data-i18n="stat1">Happy Indians Guided</span>
+            <div class="trust-stat-val">38,400<span class="val-accent">+</span></div>
+            <div class="trust-stat-lbl" data-i18n="stat1">Indians Guided</div>
           </div>
-          <div class="trust-stat-divider"></div>
           <div class="trust-stat-box">
-            <span class="trust-stat-val">4.9 / 5</span>
-            <span class="trust-stat-lbl" data-i18n="stat2">User Rating</span>
+            <div class="trust-stat-val">4.9<span class="val-divider">/</span>5 <span class="val-star">★</span></div>
+            <div class="trust-stat-lbl" data-i18n="stat2">User Rating</div>
           </div>
-          <div class="trust-stat-divider"></div>
           <div class="trust-stat-box">
-            <span class="trust-stat-val">100% Honest</span>
-            <span class="trust-stat-lbl" data-i18n="stat3">Practical Clarity & Actionable Steps</span>
+            <div class="trust-stat-val">100% Honest</div>
+            <div class="trust-stat-lbl" data-i18n="stat3">Zero Fear Traps</div>
           </div>
-          <div class="trust-stat-divider"></div>
           <div class="trust-stat-box">
-            <span class="trust-stat-val">100%</span>
-            <span class="trust-stat-lbl">Confidential & Private</span>
+            <div class="trust-stat-val">100% Private</div>
+            <div class="trust-stat-lbl" data-i18n="stat4">Confidential</div>
           </div>
         </div>
       </div>
@@ -216,84 +212,14 @@
             <p class="section-subtitle" data-i18n="cosmicSubtitle">Select your Rashi to see today's focus, best decision timing, and a simple daily tip.</p>
           </div>
 
-          <!-- 12 Rashi Selection Grid (Symmetrical 6x2 layout) -->
+          <!-- 12 Rashi Selection Grid (Never Cropped) -->
           <div class="rashi-selector-wrap">
             <div class="rashi-grid" id="rashi-grid">
-              <!-- Will be populated dynamically by script.js with text-style glyphs -->
+              <!-- Dynamically populated by data/rashis.js -->
             </div>
-          </div>
-
-          <!-- Dynamic Energy Display Grid -->
-          <div class="cosmic-display-grid" id="cosmic-display">
-            <!-- Vitals Column -->
-            <div class="energy-meters">
-              <div class="vital-card">
-                <div class="vital-header">
-                  <div class="vital-icon-title">
-                    <span class="vital-glyph">🧠</span>
-                    <span class="vital-name" data-i18n="meter1Label">Mind & Focus</span>
-                  </div>
-                  <span class="vital-badge badge-peace" id="meter-peace-val">High Focus (88%)</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill fill-peace" id="meter-peace-fill" style="width: 88%;"></div>
-                </div>
-                <p class="vital-note" id="meter-peace-note">Ideal for strategic planning, deep study, and important talks.</p>
-              </div>
-
-              <div class="vital-card">
-                <div class="vital-header">
-                  <div class="vital-icon-title">
-                    <span class="vital-glyph">☀️</span>
-                    <span class="vital-name" data-i18n="meter2Label">Best Timing for Big Work</span>
-                  </div>
-                  <span class="vital-badge badge-karma" id="meter-karma-val">High Window (93%)</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill fill-karma" id="meter-karma-fill" style="width: 93%;"></div>
-                </div>
-                <p class="vital-note" id="meter-karma-note">Favorable window between 11:00 AM – 3:30 PM for important initiatives.</p>
-              </div>
-
-              <div class="vital-card">
-                <div class="vital-header">
-                  <div class="vital-icon-title">
-                    <span class="vital-glyph">🌿</span>
-                    <span class="vital-name" data-i18n="meter3Label">Stress Level</span>
-                  </div>
-                  <span class="vital-badge badge-caution" id="meter-caution-val">Low & Steady</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill fill-caution" id="meter-caution-fill" style="width: 28%;"></div>
-                </div>
-                <p class="vital-note" id="meter-caution-note">Low emotional stress. Stay focused on your primary task.</p>
-              </div>
-            </div>
-
-            <!-- Mindful Practice Showcase Card -->
-            <div class="remedy-preview-box">
-              <div class="remedy-header-row">
-                <span class="remedy-tag" data-i18n="remedyTag">✦ Simple Daily Habit</span>
-                <span class="remedy-time-pill" id="remedy-time">Morning Routine</span>
-              </div>
-              <h4 class="remedy-title" id="remedy-title">Morning Sunlight & Warm Water Routine</h4>
-              <p class="remedy-desc" id="remedy-desc">Spend 10 minutes facing the early morning sun, followed by warm water. Keeps your head calm and clears fatigue.</p>
-              
-              <div class="remedy-meta-row">
-                <div class="remedy-bullet">
-                  <span class="bullet-dot"></span>
-                  <span id="remedy-bullet-1">Resets natural body clock</span>
-                </div>
-                <div class="remedy-bullet">
-                  <span class="bullet-dot"></span>
-                  <span id="remedy-bullet-2">Boosts energy & daily mental clarity</span>
-                </div>
-              </div>
-
-              <button type="button" class="btn-satvik-remedy" onclick="openSatvikModal()" data-i18n="btnExploreSatvik">
-                <span>Explore Simple Daily Habits</span> →
-              </button>
-            </div>
+            <p class="rashi-click-hint text-center" data-i18n="rashiClickHint">
+              <span class="hint-sparkle">✦</span> Click any Rashi to view today's complete transit guidance
+            </p>
           </div>
         </div>
       </div>
@@ -850,9 +776,88 @@
     </div>
   </div>
 
+  <!-- RASHI DAILY TRANSIT POP-UP MODAL (CLEAN & INTUITIVE) -->
+  <div class="modal-backdrop" id="rashi-modal" aria-hidden="true">
+    <div class="glass-card modal-container rashi-modal-container">
+      <button class="modal-close-btn" id="rashi-modal-close-btn" onclick="closeRashiModal()" aria-label="Close modal">✕</button>
+      
+      <!-- Active Sign Header Banner -->
+      <div class="active-rashi-banner">
+        <div class="active-rashi-left">
+          <span class="active-rashi-glyph" id="modal-rashi-glyph">♈</span>
+          <div class="active-rashi-text">
+            <h3 class="active-rashi-name" id="modal-rashi-name">Aries <span class="active-rashi-sub">(मेष)</span></h3>
+            <p class="active-rashi-tagline" id="modal-rashi-tagline">Today's Planetary Transit Guidance</p>
+          </div>
+        </div>
+        <div class="active-rashi-badge">
+          <span class="pulse-silver-dot"></span>
+          <span id="modal-transit-date">Today's Alignment</span>
+        </div>
+      </div>
+
+      <!-- 3 Core Insight Cards -->
+      <div class="rashi-insights-grid">
+        <div class="rashi-insight-card">
+          <div class="insight-card-header">
+            <div class="insight-title-group">
+              <span class="insight-icon">🧠</span>
+              <span class="insight-title" data-i18n="meter1Label">Mind & Focus</span>
+            </div>
+            <span class="insight-badge badge-blue" id="modal-peace-val">Harmonious</span>
+          </div>
+          <p class="insight-desc" id="modal-peace-note">Ideal for strategic planning, deep focus, and important decisions.</p>
+        </div>
+
+        <div class="rashi-insight-card">
+          <div class="insight-card-header">
+            <div class="insight-title-group">
+              <span class="insight-icon">☀️</span>
+              <span class="insight-title" data-i18n="meter2Label">Best Timing for Big Work</span>
+            </div>
+            <span class="insight-badge badge-dark" id="modal-karma-val">Optimal Window</span>
+          </div>
+          <p class="insight-desc" id="modal-karma-note">Favorable window between 11:00 AM – 3:30 PM for important initiatives.</p>
+        </div>
+
+        <div class="rashi-insight-card">
+          <div class="insight-card-header">
+            <div class="insight-title-group">
+              <span class="insight-icon">🌿</span>
+              <span class="insight-title" data-i18n="meter3Label">Stress Level</span>
+            </div>
+            <span class="insight-badge badge-green" id="modal-caution-val">Steady & Grounded</span>
+          </div>
+          <p class="insight-desc" id="modal-caution-note">Measured patience yields optimal strategic results.</p>
+        </div>
+      </div>
+
+      <!-- Today's Satvik Habit Banner -->
+      <div class="rashi-habit-banner">
+        <div class="habit-banner-info">
+          <div class="habit-badge-row">
+            <span class="habit-tag" data-i18n="remedyTag">✦ Simple Daily Habit</span>
+            <span class="habit-time-pill" id="modal-remedy-time">Morning Routine</span>
+          </div>
+          <h4 class="habit-title" id="modal-remedy-title">Morning Sunlight & Warm Water Routine</h4>
+          <p class="habit-desc" id="modal-remedy-desc">Spend 10 minutes facing the early morning sun, followed by warm water. Centers the nervous system and brings calm focus to your day.</p>
+          <div class="habit-benefits-row">
+            <span class="habit-benefit"><span class="benefit-tick">✓</span> <span id="modal-remedy-bullet-1">Resets natural body clock</span></span>
+            <span class="habit-benefit"><span class="benefit-tick">✓</span> <span id="modal-remedy-bullet-2">Boosts energy & daily mental clarity</span></span>
+          </div>
+        </div>
+        <div class="habit-banner-action">
+          <button type="button" class="btn-heaven btn-small btn-satvik-remedy" onclick="closeRashiModal(); openSatvikModal();" data-i18n="btnExploreSatvik">
+            <span>Explore Simple Daily Habits</span> →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SATVIK PRACTICAL REMEDIES MODAL (ZERO FEAR) -->
   <div class="modal-backdrop" id="satvik-modal" aria-hidden="true">
-    <div class="glass-card modal-container">
+    <div class="glass-card modal-container satvik-modal-container">
       <button class="modal-close-btn" onclick="closeSatvikModal()" aria-label="Close modal">✕</button>
       <div class="modal-header text-center">
         <div class="heaven-badge-sm" data-i18n="satvikModalBadge">Simple Daily Habits</div>

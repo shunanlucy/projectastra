@@ -589,7 +589,6 @@ function openSatvikModal() {
   if (modal) {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
     if (heavenlySynth) heavenlySynth.playGentleChime();
   }
 }
@@ -599,17 +598,27 @@ function closeSatvikModal() {
   if (modal) {
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = 'auto';
   }
 }
 
-// Close on backdrop click
+// Close on backdrop click & non-invasive scroll prevention
 document.addEventListener('click', (e) => {
   const satvikModal = document.getElementById('satvik-modal');
   if (e.target === satvikModal) {
     closeSatvikModal();
   }
 });
+
+const satvikModalElem = document.getElementById('satvik-modal');
+if (satvikModalElem) {
+  satvikModalElem.addEventListener('wheel', (e) => {
+    if (e.target === satvikModalElem) e.preventDefault();
+  }, { passive: false });
+
+  satvikModalElem.addEventListener('touchmove', (e) => {
+    if (e.target === satvikModalElem) e.preventDefault();
+  }, { passive: false });
+}
 
 // ==========================================================================
 // 12. MOBILE NAVIGATION & DRAWER

@@ -149,6 +149,7 @@ function initCosmicExplorer() {
     btn.type = 'button';
     btn.className = `rashi-btn ${rashi.id === selectedRashi ? 'active' : ''}`;
     btn.dataset.rashi = rashi.id;
+    btn.setAttribute('aria-label', `View horoscope for ${rashi.en}`);
     btn.innerHTML = `
       <span class="rashi-symbol">${rashi.symbol}</span>
       <span class="rashi-name">${currentLang === 'hi' ? rashi.hi : rashi.en}</span>
@@ -156,92 +157,121 @@ function initCosmicExplorer() {
     `;
 
     btn.addEventListener('click', () => {
-      selectRashi(rashi.id);
+      openRashiModal(rashi.id);
     });
 
     grid.appendChild(btn);
   });
-
-  updateCosmicDisplay();
 }
 
-function selectRashi(rashiId) {
+function openRashiModal(rashiId) {
   selectedRashi = rashiId;
   const allBtns = document.querySelectorAll('.rashi-btn');
   allBtns.forEach(btn => {
     btn.classList.toggle('active', btn.dataset.rashi === rashiId);
   });
 
+  // Populate modal data
+  populateRashiModal(rashiId);
+
   // Play subtle calming chime
-  if (heavenlySynth) {
+  if (typeof heavenlySynth !== 'undefined' && heavenlySynth) {
     heavenlySynth.playGentleChime();
   }
 
-  updateCosmicDisplay();
+  // Open modal without altering document.body.style.overflow to prevent breaking sticky hero canvas
+  const modal = document.getElementById('rashi-modal');
+  if (modal) {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+  }
 }
 
-function updateCosmicDisplay() {
-  const data = rashiData.find(r => r.id === selectedRashi) || rashiData[7];
-
-  const peaceVal = document.getElementById('meter-peace-val');
-  const peaceFill = document.getElementById('meter-peace-fill');
-  const peaceNote = document.getElementById('meter-peace-note');
-
-  const karmaVal = document.getElementById('meter-karma-val');
-  const karmaFill = document.getElementById('meter-karma-fill');
-  const karmaNote = document.getElementById('meter-karma-note');
-
-  const cautionVal = document.getElementById('meter-caution-val');
-  const cautionFill = document.getElementById('meter-caution-fill');
-  const cautionNote = document.getElementById('meter-caution-note');
-
-  const remedyTime = document.getElementById('remedy-time');
-  const title = document.getElementById('remedy-title');
-  const desc = document.getElementById('remedy-desc');
-  const bullet1 = document.getElementById('remedy-bullet-1');
-  const bullet2 = document.getElementById('remedy-bullet-2');
-
-  const isHi = currentLang === 'hi';
-
-  if (peaceVal && peaceFill) {
-    peaceVal.textContent = isHi ? `संतुलित (${data.peace}%)` : `Harmonious (${data.peace}%)`;
-    peaceFill.style.width = `${data.peace}%`;
+function closeRashiModal() {
+  const modal = document.getElementById('rashi-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
   }
-  if (peaceNote) {
-    peaceNote.textContent = isHi ? data.peaceNoteHi : data.peaceNoteEn;
-  }
+}
 
-  if (karmaVal && karmaFill) {
-    karmaVal.textContent = isHi ? `अनुकूल समय (${data.karma}%)` : `Optimal Window (${data.karma}%)`;
-    karmaFill.style.width = `${data.karma}%`;
+function populateRashiModal(rashiId) {
+  const data = rashiData.find(r => r.id === rashiId) || rashiData[7];
+  const isHi = typeof currentLang !== 'undefined' && currentLang === 'hi';
+
+  const activeGlyph = document.getElementById('modal-rashi-glyph');
+  const activeName = document.getElementById('modal-rashi-name');
+  const activeTagline = document.getElementById('modal-rashi-tagline');
+  const activeDate = document.getElementById('modal-transit-date');
+
+  if (activeGlyph) activeGlyph.textContent = data.symbol;
+  if (activeName) {
+    activeName.innerHTML = `${isHi ? data.hi : data.en} <span class="active-rashi-sub">(${isHi ? data.en : data.hi})</span>`;
   }
-  if (karmaNote) {
-    karmaNote.textContent = isHi ? data.karmaNoteHi : data.karmaNoteEn;
+  if (activeTagline) {
+    activeTagline.textContent = isHi ? "आज का मुख्य ग्रहीय गोचर व प्रभाव" : "Today's Planetary Transit Guidance";
+  }
+  if (activeDate) {
+    const today = new Date();
+    const dateStr = today.toLocaleDateString(isHi ? 'hi-IN' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    activeDate.textContent = isHi ? `आज का गोचर • ${dateStr}` : `Today's Alignment • ${dateStr}`;
   }
 
-  if (cautionVal && cautionFill) {
-    cautionVal.textContent = isHi ? `स्थिर व सौम्य` : `Steady & Grounded`;
-    cautionFill.style.width = `${data.caution}%`;
-  }
-  if (cautionNote) {
-    cautionNote.textContent = isHi ? data.cautionNoteHi : data.cautionNoteEn;
-  }
+  const peaceVal = document.getElementById('modal-peace-val');
+  const peaceNote = document.getElementById('modal-peace-note');
 
-  if (remedyTime) {
-    remedyTime.textContent = isHi ? data.remedyTimeHi : data.remedyTimeEn;
+  const karmaVal = document.getElementById('modal-karma-val');
+  const karmaNote = document.getElementById('modal-karma-note');
+
+  const cautionVal = document.getElementById('modal-caution-val');
+  const cautionNote = document.getElementById('modal-caution-note');
+
+  const remedyTime = document.getElementById('modal-remedy-time');
+  const title = document.getElementById('modal-remedy-title');
+  const desc = document.getElementById('modal-remedy-desc');
+  const bullet1 = document.getElementById('modal-remedy-bullet-1');
+  const bullet2 = document.getElementById('modal-remedy-bullet-2');
+
+  if (peaceVal) peaceVal.textContent = isHi ? 'संतुलित' : 'Harmonious';
+  if (peaceNote) peaceNote.textContent = isHi ? data.peaceNoteHi : data.peaceNoteEn;
+
+  if (karmaVal) karmaVal.textContent = isHi ? 'अनुकूल समय' : 'Optimal Window';
+  if (karmaNote) karmaNote.textContent = isHi ? data.karmaNoteHi : data.karmaNoteEn;
+
+  if (cautionVal) cautionVal.textContent = isHi ? 'स्थिर व सौम्य' : 'Steady & Grounded';
+  if (cautionNote) cautionNote.textContent = isHi ? data.cautionNoteHi : data.cautionNoteEn;
+
+  if (remedyTime) remedyTime.textContent = isHi ? data.remedyTimeHi : data.remedyTimeEn;
+  if (title) title.textContent = isHi ? data.remedyTitleHi : data.remedyTitleEn;
+  if (desc) desc.textContent = isHi ? data.remedyDescHi : data.remedyDescEn;
+  if (bullet1) bullet1.textContent = isHi ? data.bullet1Hi : data.bullet1En;
+  if (bullet2) bullet2.textContent = isHi ? data.bullet2Hi : data.bullet2En;
+}
+
+// Global modal backdrop click & Escape key listeners
+document.addEventListener('click', (e) => {
+  const rashiModal = document.getElementById('rashi-modal');
+  if (e.target === rashiModal) {
+    closeRashiModal();
   }
-  if (title) {
-    title.textContent = isHi ? data.remedyTitleHi : data.remedyTitleEn;
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeRashiModal();
   }
-  if (desc) {
-    desc.textContent = isHi ? data.remedyDescHi : data.remedyDescEn;
-  }
-  if (bullet1) {
-    bullet1.textContent = isHi ? data.bullet1Hi : data.bullet1En;
-  }
-  if (bullet2) {
-    bullet2.textContent = isHi ? data.bullet2Hi : data.bullet2En;
-  }
+});
+
+// Non-invasive background scroll prevention (preserves sticky canvas & scroll position)
+const rashiModalElem = document.getElementById('rashi-modal');
+if (rashiModalElem) {
+  rashiModalElem.addEventListener('wheel', (e) => {
+    if (e.target === rashiModalElem) e.preventDefault();
+  }, { passive: false });
+
+  rashiModalElem.addEventListener('touchmove', (e) => {
+    if (e.target === rashiModalElem) e.preventDefault();
+  }, { passive: false });
 }
 
 // ==========================================================================

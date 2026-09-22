@@ -57,9 +57,10 @@ const translations = {
     btnReveal: "See My 3 Direct Answers",
     privacyNotice: "100% Private & Confidential • Complete Data Privacy",
 
-    stat1: "Happy Indians Guided",
+    stat1: "Indians Guided",
     stat2: "User Rating",
-    stat3: "Practical Clarity & Actionable Steps",
+    stat3: "Zero Fear Traps",
+    stat4: "Confidential",
 
     pillarsBadge: "✦ THE ASTRA PHILOSOPHY",
     pillarsTitle: "Built on Clarity, Logic & Respect",
@@ -183,6 +184,7 @@ const translations = {
     cosmicBadge: "Daily Horoscope Guide",
     cosmicTitle: "Today's Planetary Impact on Your Rashi",
     cosmicSubtitle: "Select your Rashi to see today's focus, best decision timing, and a simple daily tip.",
+    rashiClickHint: "✦ Click any Rashi to view today's complete transit guidance",
     meter1Label: "Mind & Focus",
     meter2Label: "Best Timing for Big Work",
     meter3Label: "Stress Level",
@@ -257,9 +259,10 @@ const translations = {
     btnReveal: "मेरे 3 सीधे उत्तर देखें",
     privacyNotice: "100% गोपनीय व सुरक्षित • आपकी जानकारी पूर्णतः सुरक्षित है",
 
-    stat1: "संतुष्ट भारतीयों का भरोसा",
+    stat1: "संतुष्ट भारतीय",
     stat2: "यूजर रेटिंग",
-    stat3: "सटीक व व्यावहारिक मार्गदर्शन",
+    stat3: "सच्चा मार्गदर्शन",
+    stat4: "100% गोपनीय",
 
     pillarsBadge: "✦ ASTRA के आधारभूत सिद्धांत",
     pillarsTitle: "स्पष्टता, समझ और भरोसे पर आधारित",
@@ -382,6 +385,7 @@ const translations = {
     cosmicBadge: "दैनिक राशिफल गाइड",
     cosmicTitle: "आपकी राशि पर आज के ग्रहों का प्रभाव",
     cosmicSubtitle: "अपनी राशि चुनें और आज का मुख्य फोकस, काम का सबसे अच्छा समय और आसान उपाय देखें।",
+    rashiClickHint: "✦ आज का संपूर्ण गोचर व उपाय देखने के लिए किसी भी राशि पर क्लिक करें",
     meter1Label: "मन और एकाग्रता",
     meter2Label: "महत्वपूर्ण काम का सही समय",
     meter3Label: "तनाव का स्तर",
