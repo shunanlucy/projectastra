@@ -79,15 +79,16 @@ d:\PROJECTS\PROJECT ASTRA\
 | :--- | :--- | :--- |
 | **Top Announcement** | `#gochar-pill`, `.top-transit-bar` | Daily Gochar snippet with Moon transit |
 | **Header & Nav** | `#site-header`, `#lang-toggle`, `#sound-toggle`, `#mobile-menu-btn`, `#mobile-drawer` | Navigation, English/Hindi switch, soft chime audio |
-| **3D Scroll Hero Journey** | `#hero`, `#hero-scroll-canvas`, `#canvas-stage-wrap`, `#btn-open-kundli-form` | Apple-style scroll canvas scrubbing 60 frames from main.mp4 (Gemini logo removed): Hand ➔ Rising Kundli ➔ "Check Free Kundli" CTA |
-| **Horoscope Explorer** | `#cosmic-explorer`, `#rashi-grid`, `#meter-peace-val`, `#remedy-card` | 12 Rashi selector, Mind & Focus, Peak Timing, Stress meters |
+| **3D Scroll Hero Journey** | `#hero`, `#hero-scroll-canvas`, `#canvas-stage-wrap`, `#btn-open-kundli-form` | Apple-style scroll canvas scrubbing 60 frames from main.mp4 (Gemini logo removed): Hand ➔ Rising Kundli ➔ iPhone Frosted Glass CTA |
+| **Horoscope Explorer** | `#cosmic-explorer`, `#rashi-grid`, `.rashi-btn`, `.rashi-click-hint` | Symmetrical responsive 12-Rashi grid (6-col desktop, 4-col tablet, 3-col mobile, 0% cropping). Tapping any Rashi opens dedicated Pop-up Modal. |
+| **Rashi Transit Pop-up** | `#rashi-modal`, `.rashi-modal-container`, `.rashi-insights-grid` | Dedicated square modal with active sign header, 3 fluid insight cards (Mind & Focus, Best Timing, Stress Level), and Today's Satvik Habit |
 | **3 Life Pillars Showcase** | `#life-pillars`, `.pillar-showcase-card` | Dedicated 3-Card visual showcase (Career, Love/Marriage, Wealth) with action CTAs |
 | **Philosophy & Standards** | `#contrast`, `.standards-grid`, `.standard-card` | 4 ASTRA Principles (1-Screen Concrete Answers, Simple Language, Sensible Advisors, Upfront Rates) |
-| **Sample Roadmap** | *(Removed per user preference)* | Replaced by direct interactive modal previews via CTA |
-| **Astrologer Guides** | `#guides`, `.guides-grid`, `.guide-card`, `.voice-preview-btn` | Dr. Saurabh Kulkarni, Ananya Vashistha, Raghavendra Mishra |
+| **Customer Feedback Marquee** | `#community-reviews`, `.reviews-marquee-wrapper`, `.reviews-marquee-track`, `.review-card` | 10 Authentic Indian reviews (Hindi, English, Hinglish) across young grads, tech leads, parents & elders in a fluid, continuous right-to-left marquee scroll with hover-pause |
+| **Astrologer Guides** | `#guides`, `.guides-grid`, `.guide-card`, `.voice-preview-btn` | Dr. Saurabh Kulkarni, Ananya Vashistha, Raghavendra Mishra with 15s audio previews |
 | **Pricing Tiles** | `#pricing`, `.pricing-grid`, `.pricing-tile` | Flat rates: ₹0 Free Kundli, ₹99 Single Question, ₹249 15-min Call |
 | **FAQ Accordion** | `#faq`, `.faq-item`, `.faq-question`, `.faq-answer` | 4 collapsible FAQs answering real doubts |
-| **Modals** | `#kundli-form-modal`, `#roadmap-modal`, `#satvik-modal`, `#checkout-modal` | Kundli Form Details, Kundli 3-Point Results, Simple Daily Habits, Booking Call |
+| **Modals** | `#kundli-form-modal`, `#rashi-modal`, `#satvik-modal`, `#checkout-modal` | Kundli Form Details, Rashi Transit Pop-up, Simple Daily Habits, Booking Call |
 
 ---
 
@@ -97,20 +98,33 @@ d:\PROJECTS\PROJECT ASTRA\
   - Backgrounds: `#F8FAFC` (Brushed Platinum), `#F1F5F9` (Mist)
   - Text: `#0F172A` (Obsidian Charcoal), `#475569` (Balanced Slate), `#94A3B8` (Muted)
   - Metallics: `#CBD5E1` (Liquid Chrome), `#E2E8F0` (Silver Surface), `#FFFFFF` (Specular White)
-  - Accent: `#38BDF8` (Cool Sky Blue glint)
+  - Accent: `#38BDF8` (Cool Sky Blue glint), `#0284C7` (Luminous Dot)
   - **Forbidden**: No gold, yellow, or mustard colors.
 - **Architectural Square Geometry**:
   - `border-radius: 0 !important;` on all cards, buttons, inputs, modals, and badges.
   - Exceptions: Only astronomical bodies (planets, moon, halo) retain `border-radius: 50%`.
 - **Button Styling**:
   - `.btn-heaven`: Silver metallic liquid chrome gradient (`linear-gradient(135deg, #FFFFFF, #E2E8F0, #CBD5E1)`), slate-900 bold text, 1px `#CBD5E1` border, 3D glint.
+  - `.hero-kundli-trigger-btn`: Authentic Apple iPhone / iOS frosted glassmorphism (`backdrop-filter: blur(32px) saturate(220%) brightness(105%)`, specular top-edge bevel reflections, light beam shimmer, no arrow `→`).
 - **Fluid Responsiveness**:
   - `clamp()` used for typography, container padding, and spacing.
+  - Multi-column grids must use `minmax(0, 1fr)` to prevent content overflow and unwanted horizontal scrollbars.
   - Smooth breakpoint scaling down to 320px screens.
 
 ---
 
-## 6. Language & Copywriting Rules
+## 6. Critical Stability Rules
+
+1. **Sticky Canvas Preservation**:
+   - **NEVER** alter `document.body.style.overflow` (`overflow = 'hidden'` or `'auto'`) in modal controllers.
+   - Setting `overflow: hidden` on `body` breaks `position: sticky` on `.stage-sticky-viewport` in Chromium and WebKit, causing the 60-frame hero canvas to unpin, jump, and leave massive empty white space.
+   - To lock backdrop scrolling when modals open, use non-invasive `wheel` and `touchmove` listeners with `e.preventDefault()` on the modal backdrop element.
+2. **Push Confirmation**:
+   - **NEVER** push commits to GitHub without the user's explicit confirmation.
+
+---
+
+## 7. Language & Copywriting Rules
 
 - **English Rules**:
   - Always use simple, direct words: "Direct Answers", "Job Switch", "Marriage Timing", "Salary Hike", "Simple Daily Habit".
